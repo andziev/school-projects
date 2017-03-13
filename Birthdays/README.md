@@ -4,13 +4,17 @@
 Влез: 
 
 3
+
 Magdalena Kostoska 15/05/1982
+
 Hristina Mihajloska 30/05/1984
+
 Ilinka Ivanoska 15/05/1986
+
 15/05/2016
 
 Излез:
 
 Ilinka Ivanoska 30
-Magdalena Kostoska 34
 
+Magdalena Kostoska 34
