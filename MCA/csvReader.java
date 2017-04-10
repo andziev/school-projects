@@ -9,12 +9,12 @@ public class Test {
         String csvFile = "C:/Users/kruz/Desktop/Navigation.csv";        
           
         try {
-        	BufferedReader reader = new BufferedReader(new FileReader(csvFile));
-        	MyTreeNode root = new MyTreeNode(null);
-        	Set <Item> items = new TreeSet<>();
+            BufferedReader reader = new BufferedReader(new FileReader(csvFile));
+            MyTreeNode root = new MyTreeNode(null);
+            Set <Item> items = new TreeSet<>();
         	
             reader.lines()
-            		.map(line -> line.split(";"))
+            	    .map(line -> line.split(";"))
                     .forEach(parts -> {
                         if(parts[3].equals("False")) 
                             items.add(new Item(parts[0],parts[1],parts[2],parts[4]));
@@ -82,8 +82,8 @@ class Item implements Comparable<Item> {
     }
     
     public int compareTo(Item item) {
-		return path.compareTo(item.path);
-	}
+	return path.compareTo(item.path);
+    }
     
     public String toString() {
         return name;
