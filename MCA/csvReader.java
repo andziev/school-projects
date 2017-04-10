@@ -48,7 +48,7 @@ public class csvReader {
     static int printer (MyTreeNode  root, String token) {
         for(MyTreeNode node : root.getChildren()) {
             System.out.println(token + " " + node.getData());
-            printer(node,token + "..");
+            printer(node,token + "...");
         }
         return 0;
     }
