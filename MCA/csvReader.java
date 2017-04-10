@@ -17,8 +17,7 @@ public class Test {
             	    .map(line -> line.split(";"))
                     .forEach(parts -> {
                         if(parts[3].equals("False")) 
-                            items.add(new Item(parts[0],parts[1],parts[2],parts[4]));
-                    });
+                            items.add(new Item(parts[0],parts[1],parts[2],parts[4]));});
             reader.close();
             			
             for(Item item : items) {
@@ -76,13 +75,9 @@ class Item implements Comparable<Item> {
     public int getParentID() {
         return parentID;
     }
-    
-    public String getPath() {
-    	return path;
-    }
-    
+        
     public int compareTo(Item item) {
-	return path.compareTo(item.path);
+    	return path.compareTo(item.path);
     }
     
     public String toString() {
@@ -94,7 +89,6 @@ class MyTreeNode {
 
     private Item item = null;
     private List<MyTreeNode> children = new LinkedList<>();
-    private MyTreeNode parent = null;
 
     public MyTreeNode(Item item) {
         this.item = item;
@@ -102,7 +96,6 @@ class MyTreeNode {
 
     public void addChild(Item item) {
         MyTreeNode newChild = new MyTreeNode(item);
-        newChild.setParent(this);
         children.add(newChild);
     }
 
@@ -112,9 +105,5 @@ class MyTreeNode {
 
     public Item getData() {
         return item;
-    }
-
-    private void setParent(MyTreeNode parent) {
-        this.parent = parent;
     }
 }
