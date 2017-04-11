@@ -22,9 +22,9 @@ public class csvReader {
             			
             for(Item item : items) {
             	if(item.getParentID() == 0)
-            		root.addChild(item);
+            	    root.addChild(item);
             	else
-            		builder(root, item);
+            	    builder(root, item);
             }            
             printer(root,".");
         }
