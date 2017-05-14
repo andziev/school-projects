@@ -22,7 +22,7 @@ public class csvReader {
             reader.close();
             			
             for(Item item : items) {
-            	if(item.getParentID() == 0)
+            	if(item.getParentID() == null)
             	    root.addChild(item);
             	else
             	    builder(root, item);
@@ -59,13 +59,13 @@ class Item implements Comparable<Item> {
 
     private int ID;
     private String name;
-    private int parentID;
+    private Integer parentID;
     private String path;
 
     public Item(String ID, String name, String parentID, String path) {
         this.ID = Integer.parseInt(ID);
         this.name = name;
-        this.parentID = parentID.equals("NULL") ? 0 : Integer.parseInt(parentID);
+        this.parentID = parentID.equals("NULL") ? null : Integer.parseInt(parentID);
         this.path = path;
     }
 
@@ -73,7 +73,7 @@ class Item implements Comparable<Item> {
         return ID;
     }
 
-    public int getParentID() {
+    public Integer getParentID() {
         return parentID;
     }
         
