@@ -35,23 +35,21 @@ public class csvReader {
         }
     }
 
-    static int builder (MyTreeNode root, Item item) {
+    static void builder (MyTreeNode root, Item item) {
         for(MyTreeNode node : root.getChildren()) {
             if(node.getData().getID() == item.getParentID()) {
                 node.addChild(item);
-                return 0;
+                return;
             }
             builder(node,item);
         }
-        return 0;
     }
 
-    static int printer (MyTreeNode  root, String token) {
+    static void printer (MyTreeNode  root, String token) {
         for(MyTreeNode node : root.getChildren()) {
             System.out.println(token + " " + node.getData());
             printer(node,token + "...");
         }
-        return 0;
     }
 }
 
